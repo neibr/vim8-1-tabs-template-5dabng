@@ -1,0 +1,6 @@
+/* Add application styles & imports to this file! */
+.tabs__titles {
+    flex: 1 1 0;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
