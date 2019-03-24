@@ -1,3 +1,10 @@
-<div class="tabs__title">
-    <tab *ngFor="let tab of tabs" [tab]="tab"></tab>
+<button (click)="dec()">
+    Remove tab
+</button>
+<button (click)="inc()">
+    Add tab
+</button>
+
+<div class="tabs__titles">
+    <tab (removeTabEvent)="removeTabEventHandler($event)" *ngFor="let tab of tabs" [tab]="tab"></tab>
 </div>

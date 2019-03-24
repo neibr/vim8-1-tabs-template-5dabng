@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
     styleUrls: ['./tab-content.component.css']
 })
 export class TabContentComponent implements OnInit {
-    @Input() content: string = '';
+    @Input() index: string;
 
     constructor() {
     }

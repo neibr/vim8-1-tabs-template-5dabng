@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
     styleUrls: ['./tab-title.component.css']
 })
 export class TabTitleComponent implements OnInit {
-    @Input() title: string = '';
+    @Input() index: string;
 
     constructor() {
     }
