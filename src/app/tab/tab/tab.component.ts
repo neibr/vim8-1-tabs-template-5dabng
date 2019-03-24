@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Tab} from "./tab.model";
 
 @Component({
@@ -6,15 +6,11 @@ import {Tab} from "./tab.model";
     templateUrl: './tab.component.html',
     styleUrls: ['./tab.component.css']
 })
-export class TabComponent implements OnInit {
-    @Output() removeTabEvent = new EventEmitter()
+export class TabComponent {
+    @Output() removeTabEvent: EventEmitter<Tab> = new EventEmitter();
     @Input() tab: Tab;
 
-    ngOnInit() {
-    }
-
-    removeTab(tab) {
-        console.log(tab);
+    removeTab(tab: Tab) {
         this.removeTabEvent.emit(tab);
     }
 }

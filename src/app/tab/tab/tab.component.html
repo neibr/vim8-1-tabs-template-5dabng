@@ -1,4 +1,4 @@
-<div [className]="tab.active ? 'tabs__title tabs__title--active': 'tabs__title'">
+<div [ngClass]="{'tabs__title': true, 'tabs__title--active': tab.active }">
     <tab-title [index]="tab.index">
     </tab-title>
     <tab-content [index]="tab.index" *ngIf="tab.active">

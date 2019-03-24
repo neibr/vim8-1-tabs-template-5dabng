@@ -11,9 +11,9 @@ export class TabsComponent {
     @Input() tabs: Tab[] = [];
 
     constructor() {
-        this.tabs.push(this.createNewTab(true));
-        this.tabs.push(this.createNewTab());
-        this.tabs.push(this.createNewTab());
+        this.tabs.push(this.createTab(true));
+        this.tabs.push(this.createTab());
+        this.tabs.push(this.createTab());
     }
 
     private dec() {
@@ -21,23 +21,17 @@ export class TabsComponent {
     }
 
     private inc() {
-        this.tabs.forEach(obj => {
-            console.log(obj);
-        });
-
-        this.tabs = [...this.tabs, this.createNewTab(!this.tabs.length)];
+        this.tabs = [...this.tabs, this.createTab(!this.tabs.length)];
     }
 
-    private createNewTab(active = false) {
-        let index = this.tabs.length;
-
+    private createTab(active: boolean = false): Tab {
         return new Tab(
-            index,
+            this.tabs.length,
             active
         );
     }
 
-    private removeTabByIndex(index) {
+    private removeTabByIndex(index: number) {
         if (!(index in this.tabs)) {
             return;
         }
@@ -54,8 +48,7 @@ export class TabsComponent {
         this.tabs = tabs;
     }
 
-    private removeTabEventHandler(tab) {
+    private removeTabEventHandler(tab: Tab) {
         this.removeTabByIndex(this.tabs.indexOf(tab));
     }
-
 }
